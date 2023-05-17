@@ -1,0 +1,10 @@
+datetimetype/__init__.py,sha256=Vpp6zAgUhzm1nA8QGmBnAe6qzynx7fm_l150Zy8XZrE,3986
+datetimetype/__pycache__/__init__.cpython-39.pyc,,
+datetimetype/__pycache__/datetime_predicates.cpython-39.pyc,,
+datetimetype/datetime_predicates.py,sha256=37aqN1RxkOlIdGXmkG758OcURfQlyZsifoY909Wo4fc,2782
+dedupe_variable_datetime-1.0.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+dedupe_variable_datetime-1.0.0.dist-info/METADATA,sha256=da3IoeshWFFkg4b6mIefHSVBIl1VIG0-5oFzaz1h25Y,328
+dedupe_variable_datetime-1.0.0.dist-info/RECORD,,
+dedupe_variable_datetime-1.0.0.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+dedupe_variable_datetime-1.0.0.dist-info/entry_points.txt,sha256=P4JSzSv3LWNDij8Z1Rx9sMCtB6qqm5FcgEfCbkuLQe8,37
+dedupe_variable_datetime-1.0.0.dist-info/top_level.txt,sha256=btAnPwv9R8BexanE4ZFi1wn_qYxoiTWel_Pkk3eVAMI,13

@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: dedupe-variable-datetime
+Version: 1.0.0
+Summary: DateTime variable type for dedupe
+License: The MIT License: http://www.opensource.org/licenses/mit-license.php
+Project-URL: Homepage, https://github.com/datamade/dedupe-variable-datetime
+Requires-Dist: dedupe (>=3.0)
+Requires-Dist: datetime-distance
+
