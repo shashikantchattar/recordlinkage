@@ -1504,7 +1504,7 @@ class Link(ActiveMatching):
             raise ValueError("Dictionary of records from first dataset is empty.")
         elif len(data_2) == 0:
             raise ValueError("Dictionary of records from second dataset is empty.")
-
+        
         self.data_model.check(next(iter(data_1.values())))
         self.data_model.check(next(iter(data_2.values())))
 
