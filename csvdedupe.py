@@ -5,6 +5,7 @@ import re
 import logging
 import optparse
 import pandas as pd
+import sys
 
 import dedupe
 from unidecode import unidecode
@@ -41,6 +42,9 @@ def readData(filename):
     return data_d
             
 if __name__ == '__main__':    
+
+        n = len(sys.argv)
+        print("Total arguments passed:", n)
             
         optp = optparse.OptionParser() 
               
@@ -60,13 +64,23 @@ if __name__ == '__main__':
             
         logging.getLogger().setLevel(log_level)
     
-        output_file = 'files/data_matching_output.csv'
-        output_file_sorted = 'files/data_sorted_output.csv'
-        settings_file = 'files/data_matching_learned_settings'
-        training_file = 'files/data_matching_training.json'
+        settings_file = 'settings/data_matching_learned_settings'
+        training_file = 'settings/data_matching_training.json'
 
-        left_file = 'files/JSE_Instrument_file.csv'
-        right_file = 'files/Refinitiv_Instrument_file.csv'
+        if(n>1):
+            # Sample files
+            file = 'training'
+            output_file = 'files/output/'+file+'_output.csv'
+            output_file_sorted = 'files/output/'+file+'_sorted_output.csv'        
+            left_file = 'files/input/training/JSE_Training_1.csv'
+            right_file = 'files/input/training/Refinitiv_Training_1.csv'
+        else:
+            # Actual files
+            file = 'actual'
+            output_file = 'files/output/'+file+'_output.csv'
+            output_file_sorted = 'files/output/'+file+'_sorted_output.csv'
+            left_file = 'files/input/actual/JSE_Instrument_file.csv'
+            right_file = 'files/input/actual/Refinitiv_Instrument_file.csv'
 
         print('importing data ...')
         data_1 = readData(left_file)
@@ -85,12 +99,9 @@ if __name__ == '__main__':
                 fields = [
                     {'field': 'Stock Name', 'type': 'String'},
                     {'field': 'Company Name', 'type': 'String'},
-                ]
-                
-                
+                ]               
         
                 linker = dedupe.RecordLink(fields)
-                print('qwertt')
                 if os.path.exists(training_file):
                     print('reading labeled examples from ', training_file)
                     with open(training_file) as tf:
@@ -99,7 +110,6 @@ if __name__ == '__main__':
                                         training_file=tf,
                                         sample_size=15000)
                 else:
-                    print('dstr')
                     linker.prepare_training(data_1, data_2, sample_size=100)
                     print('red')
                 print('starting active labeling...')
